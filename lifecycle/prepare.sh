@@ -32,6 +32,6 @@ for component in ${components}; do
   IFS='@' read -ra data <<< "${component}"
   echo "[www_components] processing ${data[0]} to ${data[1]}"
   mkdir -p ${DATA_PATH}/www/${data[1]}
-  curl ${data[0]} -O --output-dir ${DATA_PATH}/www/${data[1]} &> /dev/null
+  wget -P ${DATA_PATH}/www/${data[1]} ${data[0]} &> /dev/null
 done
 #endregion
