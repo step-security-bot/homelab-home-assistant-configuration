@@ -1,0 +1,107 @@
+---
+homeassistant:
+  name: Home
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: 0
+  country: AT
+  time_zone: Europe/Vienna
+  unit_system: metric
+  temperature_unit: C
+  currency: EUR
+  external_url: !secret homeassistant_url
+  internal_url: !secret homeassistant_url
+  packages: !include_dir_named packages
+  customize_domain:
+    automation:
+      initial_state: 'on'
+  auth_providers:
+    - type: homeassistant
+  allowlist_external_dirs:
+    - !secret configuration_dir
+
+http:
+  server_port: 8123
+  ip_ban_enabled: true
+  login_attempts_threshold: 10
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.0.0.0/8
+
+api:
+
+recorder:
+  purge_keep_days: 15
+  commit_interval: 15
+  auto_purge: true
+  auto_repack: true
+
+influxdb: !include influxdb.yaml
+
+prometheus:
+  namespace: homeassistant
+
+backup:
+
+config:
+
+network:
+
+system_health:
+
+dhcp:
+
+zeroconf:
+
+webhook:
+
+my:
+
+energy:
+
+frontend:
+
+discovery:
+
+sun:
+
+counter:
+
+mobile_app:
+
+person:
+
+ssdp:
+
+tag:
+
+timer:
+
+usb:
+
+zone:
+
+logbook:
+
+history:
+
+tts:
+  - platform: google_translate
+
+automation: !include_dir_merge_list automation
+script: !include_dir_merge_named script
+scene: !include_dir_merge_list scene
+group: !include_dir_merge_named group
+switch: !include_dir_merge_list switch
+sensor: !include_dir_merge_list sensor
+device_tracker: !include_dir_merge_list device_tracker
+input_boolean: !include_dir_merge_named input_boolean
+shell_command: !include_dir_merge_named shell_command
+input_datetime: !include_dir_merge_named input_datetime
+input_number: !include_dir_merge_named input_number
+input_select: !include_dir_merge_named input_select
+input_text: !include_dir_merge_named input_text
+template: !include_dir_merge_named template
+
+logger:
+  default: warning
