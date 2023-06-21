@@ -31,7 +31,7 @@ function restore() {
   echo "restoring..."
 
   echo "wiping data..."
-  rm -rf ${DATA_PATH}/
+  rm -rf ${DATA_PATH}/*
   mkdir -p ${DATA_PATH}/.storage
 
   # download backup from S3
