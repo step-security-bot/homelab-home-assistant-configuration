@@ -36,7 +36,7 @@ recorder:
   auto_purge: true
   auto_repack: true
 
-influxdb: !include influxdb.yaml
+influxdb: !include influxdb/configuration.yaml
 
 prometheus:
   namespace: homeassistant

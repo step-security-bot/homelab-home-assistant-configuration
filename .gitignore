@@ -390,3 +390,4 @@ pip-selfcheck.json
 local.env
 gcp-*-key.json
 tmp/
+share/

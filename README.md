@@ -19,6 +19,6 @@ All secrets are encrypted with [sops](https://github.com/mozilla/sops) and [Goog
 
 The directory [`lifecycle`](lifecycle/) contains all lifecycle scripts:
 
-- `prepare.sh`: installs all custom and www components defined in [`configuration/custom_components.txt`](configuration/custom_components.txt) and [`configuration/www_components.txt`](configuration/www_components.txt)
+- `prepare.sh`: installs all custom and www components defined in [`components/custom_components.txt`](components/custom_components.txt) and [`components/www_components.txt`](components/www_components.txt)
 - `sops.sh`: encrypts or decrypts all necessary files (pass `e` for encryption, and `d` for decryption)
 - `backup_restore.sh`: checks if data exists and either backups or restores the configuration
