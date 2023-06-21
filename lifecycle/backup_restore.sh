@@ -36,9 +36,10 @@ function restore() {
   # download backup from S3
   echo "downloading and restoring storage..."
   s3cmd --access_key=${GCS_ACCESS_KEY_ID} --secret_key="${GCS_SECRET_ACCESS_KEY}" --host="https://storage.googleapis.com" --host-bucket="https://storage.googleapis.com" --recursive --force sync s3://${S3_ASSETS_BUCKET_PATH}/ ${DATA_PATH}/.storage/
+}
 
-  # restore configuration
-  echo "restoring configuration..."
+function copy_configuration() {
+  echo "copying configuration..."
   cp -rf configuration/* ${DATA_PATH}/
 }
 #endregion
@@ -59,4 +60,5 @@ if [[ "${DATA_EXISTS}" == "true" ]]; then
 else
   restore
 fi
+copy_configuration
 #endregion
