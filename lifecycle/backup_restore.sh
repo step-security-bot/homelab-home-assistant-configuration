@@ -22,7 +22,8 @@ function backup() {
   
   # uploading backup from S3
   echo "uploading storage..."
-  s3cmd --access_key=${GCS_ACCESS_KEY_ID} --secret_key="${GCS_SECRET_ACCESS_KEY}" --host="https://storage.googleapis.com" --host-bucket="https://storage.googleapis.com" --recursive --force --delete-removed --exclude-from .s3ignore sync ${DATA_PATH}/.storage/ s3://${S3_ASSETS_BUCKET_PATH}/
+  # TODO: we cannot pass '--delete-removed' due to https://github.com/s3tools/s3cmd/issues/1222
+  s3cmd --access_key=${GCS_ACCESS_KEY_ID} --secret_key="${GCS_SECRET_ACCESS_KEY}" --host="https://storage.googleapis.com" --host-bucket="https://storage.googleapis.com" --recursive --force --exclude-from .s3ignore sync ${DATA_PATH}/.storage/ s3://${S3_ASSETS_BUCKET_PATH}/
 }
 
 function restore() {
