@@ -2,13 +2,14 @@
 set -euo pipefail
 
 DATA_PATH=${1}
+SOURCE_PATH=${2:-.}
 
 #region custom components
 echo "[custom_components] wiping all existing components..."
 rm -rf ${DATA_PATH}/custom_components
 mkdir -p ${DATA_PATH}/custom_components
 
-components=$(cat components/custom_components.txt)
+components=$(cat ${SOURCE_PATH}/components/custom_components.txt)
 for component in ${components}; do
   IFS='@' read -ra data <<< "${component}"
   echo "[custom_components] processing ${data[0]} at version ${data[1]}"
@@ -27,7 +28,7 @@ echo "[www_components] wiping all existing components..."
 rm -rf ${DATA_PATH}/www
 mkdir -p ${DATA_PATH}/www
 
-components=$(cat components/www_components.txt)
+components=$(cat ${SOURCE_PATH}/components/www_components.txt)
 for component in ${components}; do
   IFS='@' read -ra data <<< "${component}"
   echo "[www_components] processing ${data[0]} to ${data[1]}"

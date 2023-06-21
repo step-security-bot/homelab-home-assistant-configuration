@@ -2,6 +2,7 @@
 set -euo pipefail
 
 DATA_PATH=${1}
+SOURCE_PATH=${2:-.}
 
 #region global configuration
 S3_ASSETS_BUCKET_PATH="${S3_ASSETS_BUCKET}/home-assistant"
@@ -40,7 +41,7 @@ function restore() {
 
 function copy_configuration() {
   echo "copying configuration..."
-  cp -rf configuration/* ${DATA_PATH}/
+  cp -rf ${SOURCE_PATH}/configuration/* ${DATA_PATH}/
 }
 #endregion
 
