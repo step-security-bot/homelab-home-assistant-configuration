@@ -3,7 +3,7 @@ homeassistant:
   name: Home
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
-  elevation: 0
+  elevation: !secret homeassistant_elevation
   country: AT
   time_zone: Europe/Vienna
   unit_system: metric
@@ -18,7 +18,7 @@ homeassistant:
   auth_providers:
     - type: homeassistant
   allowlist_external_dirs:
-    - !secret configuration_dir
+    - !env_var DATA_PATH
 
 http:
   server_port: 8123

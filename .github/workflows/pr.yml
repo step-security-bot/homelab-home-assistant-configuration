@@ -8,6 +8,8 @@ jobs:
   homeassistant:
     runs-on: ubuntu-latest
     name: Verify Home Assistant Configuration
+    env:
+      DATA_PATH: tmp
     strategy:
       max-parallel: 4
       matrix:

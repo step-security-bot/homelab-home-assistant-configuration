@@ -1,10 +1,10 @@
 ---
 api_version: 2
 ssl: false
-host: !secret influxdb_host
+host: telegraf.home-assistant-telegraf
 port: 8086
-organization: !secret influxdb_organization
-bucket: !secret influxdb_bucket
+organization: home-data
+bucket: homeassistant
 token: !secret influxdb_token
 default_measurement: state
 tags:
