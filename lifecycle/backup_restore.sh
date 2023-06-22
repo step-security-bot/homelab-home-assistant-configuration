@@ -48,7 +48,7 @@ function restore() {
 
 function copy_configuration() {
   echo "wiping current configuration data..."
-  files=$(find ${SOURCE_PATH}/configuration -depth 1 -exec basename {} +)
+  files=$(find ${SOURCE_PATH}/configuration -maxdepth 1 -exec basename -a {} +)
   for file in ${files[@]}; do
     rm -rf ${DATA_PATH}/${file}
   done
