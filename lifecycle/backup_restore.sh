@@ -2,7 +2,8 @@
 set -euo pipefail
 
 DATA_PATH=${1}
-SOURCE_PATH=${2:-.}
+COPY_CONFIG=${2:-false}
+SOURCE_PATH=${3:-.}
 
 #region global configuration
 S3_ASSETS_BUCKET_PATH="${S3_ASSETS_BUCKET}/home-assistant"
@@ -25,6 +26,10 @@ function backup() {
   echo "uploading storage..."
   # TODO: we cannot pass '--delete-removed' due to https://github.com/s3tools/s3cmd/issues/1222
   s3cmd --access_key=${GCS_ACCESS_KEY_ID} --secret_key="${GCS_SECRET_ACCESS_KEY}" --host="https://storage.googleapis.com" --host-bucket="https://storage.googleapis.com" --recursive --force --exclude-from .s3ignore sync ${DATA_PATH}/.storage/ s3://${S3_ASSETS_BUCKET_PATH}/
+
+  if [[ "${COPY_CONFIG}" == "true" ]]; then
+    copy_configuration
+  fi
 }
 
 function restore() {
@@ -37,9 +42,17 @@ function restore() {
   # download backup from S3
   echo "downloading and restoring storage..."
   s3cmd --access_key=${GCS_ACCESS_KEY_ID} --secret_key="${GCS_SECRET_ACCESS_KEY}" --host="https://storage.googleapis.com" --host-bucket="https://storage.googleapis.com" --recursive --force sync s3://${S3_ASSETS_BUCKET_PATH}/ ${DATA_PATH}/.storage/
+
+  copy_configuration
 }
 
 function copy_configuration() {
+  echo "wiping current configuration data..."
+  files=$(find ${SOURCE_PATH}/configuration -depth 1 -exec basename {} +)
+  for file in ${files[@]}; do
+    rm -rf ${DATA_PATH}/${file}
+  done
+
   echo "copying configuration..."
   cp -rf ${SOURCE_PATH}/configuration/* ${DATA_PATH}/
 }
@@ -61,5 +74,4 @@ if [[ "${DATA_EXISTS}" == "true" ]]; then
 else
   restore
 fi
-copy_configuration
 #endregion
