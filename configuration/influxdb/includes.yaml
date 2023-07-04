@@ -70,7 +70,8 @@ entity_globs:
   - sensor.deebot_life_span_*
   - sensor.deebot_last_cleaning
   # entrance door lock
-  - lock.entrance_door
+  - lock.entrance_door_lock
+  - sensor.entrance_door_battery
   # sun
   - sun.sun
   - sensor.sun_*

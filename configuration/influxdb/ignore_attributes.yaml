@@ -34,6 +34,8 @@
 - connected
 - support_pullspring
 - duration_pullspring
+- semi_locked
+- battery_level
 # energy consumed
 - meter_type
 - meter_type_name
