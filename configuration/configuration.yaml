@@ -61,8 +61,6 @@ energy:
 
 frontend:
 
-discovery:
-
 sun:
 
 counter:
