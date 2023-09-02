@@ -2,10 +2,8 @@
 living_room_media_system_power_on:
   alias: "Living Room Media System: Turn On"
   sequence:
-    - service: script.turn_on
-      data: {}
-      entity_id: script.living_room_projector_power_on
     - service: media_player.turn_on
       data: {}
-      entity_id: media_player.denon_avr_x1500h
+      target:
+        entity_id: media_player.denon_avr_x1500h
   mode: single
