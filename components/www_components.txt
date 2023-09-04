@@ -1,3 +1,3 @@
-https://github.com/denysdovhan/vacuum-card/releases/download/v2.7.4/vacuum-card.js@community/vacuum-card
+https://github.com/denysdovhan/vacuum-card/releases/download/v2.7.5/vacuum-card.js@community/vacuum-card
 https://github.com/rianadon/timer-bar-card/releases/download/v1.24/timer-bar-card.js@community/timer-bar-card
 https://github.com/MindFreeze/ha-sankey-chart/releases/download/v1.14.0/ha-sankey-chart.js@community/ha-sankey-chart
