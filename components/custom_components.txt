@@ -1,5 +1,5 @@
 https://github.com/DeebotUniverse/Deebot-4-Home-Assistant.git@2.1.0
-https://github.com/ollo69/ha-smartthinq-sensors.git@v0.35.4
+https://github.com/ollo69/ha-smartthinq-sensors.git@v0.35.5
 https://github.com/slashback100/presence_simulation.git@v3.1
 https://github.com/zachowj/hass-node-red.git@v3.1.1
 https://github.com/patrickhilker/tedee_hass_integration.git@2023.7.4
