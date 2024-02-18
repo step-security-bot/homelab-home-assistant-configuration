@@ -391,3 +391,4 @@ local.env
 gcp-*-key.json
 tmp/
 share/
+.python-version
