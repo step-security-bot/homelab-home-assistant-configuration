@@ -31,3 +31,5 @@ jobs:
           path: configuration
           secrets: .ci/secrets.yaml
           version: "${{ matrix.home-assistant-version }}"
+        env:
+          POSTGRESQL_URI: postgresql://user:password@host:5432/db
