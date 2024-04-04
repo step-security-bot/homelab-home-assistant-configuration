@@ -3,6 +3,6 @@ https://github.com/rianadon/timer-bar-card/releases/download/v1.24/timer-bar-car
 https://github.com/custom-cards/button-card/releases/download/v4.1.2/button-card.js@community/button-card
 https://github.com/kinghat/tabbed-card/releases/download/v0.3.2/tabbed-card.js@community/tabbed-card
 https://github.com/MindFreeze/ha-sankey-chart/releases/download/v1.21.1/ha-sankey-chart.js@community/ha-sankey-chart
-https://github.com/piitaya/lovelace-mushroom/releases/download/v3.5.2/mushroom.js@community/mushroom
+https://github.com/piitaya/lovelace-mushroom/releases/download/v3.5.4/mushroom.js@community/mushroom
 https://github.com/alexarch21/history-explorer-card/releases/download/v1.0.51/history-explorer-card.js@community/history-explorer-card
 https://github.com/RomRider/apexcharts-card/releases/download/v2.0.4/apexcharts-card.js@community/apexcharts-card
