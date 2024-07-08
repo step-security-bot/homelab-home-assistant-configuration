@@ -1,4 +1,4 @@
 https://github.com/ollo69/ha-smartthinq-sensors.git@v0.39.2
-https://github.com/slashback100/presence_simulation.git@v4.8
+https://github.com/slashback100/presence_simulation.git@v4.9
 https://github.com/zachowj/hass-node-red.git@v4.0.1
 https://github.com/muhlba91/onyx-homeassistant-integration.git@v10.0.0
