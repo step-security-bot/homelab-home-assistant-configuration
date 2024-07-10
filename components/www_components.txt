@@ -5,4 +5,4 @@ https://github.com/kinghat/tabbed-card/releases/download/v0.3.2/tabbed-card.js@c
 https://github.com/MindFreeze/ha-sankey-chart/releases/download/v3.2.2/ha-sankey-chart.js@community/ha-sankey-chart
 https://github.com/piitaya/lovelace-mushroom/releases/download/v3.6.4/mushroom.js@community/mushroom
 https://github.com/alexarch21/history-explorer-card/releases/download/v1.0.51/history-explorer-card.js@community/history-explorer-card
-https://github.com/RomRider/apexcharts-card/releases/download/v2.0.4/apexcharts-card.js@community/apexcharts-card
+https://github.com/RomRider/apexcharts-card/releases/download/v2.1.2/apexcharts-card.js@community/apexcharts-card
