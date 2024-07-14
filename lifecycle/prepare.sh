@@ -32,9 +32,9 @@ mkdir -p ${DATA_PATH}/www || true
 while read -r component; do
   if [ ! ${component:0:1} = \# ]; then
     IFS='@' read -ra data <<< "${component}"
-    echo "[www_components] processing ${data[0]} to ${data[1]}"
-    mkdir -p ${DATA_PATH}/www/${data[1]} || true
-    wget -P ${DATA_PATH}/www/${data[1]} ${data[0]} &> /dev/null
+    echo "[www_components] processing ${data[0]}/${data[1]}/${data[2]} to ${data[3]}"
+    mkdir -p ${DATA_PATH}/www/${data[3]} || true
+    wget -P ${DATA_PATH}/www/${data[3]} ${data[0]}/${data[1]}/${data[2]} &> /dev/null
   fi
 done < ${SOURCE_PATH}/components/www_components.txt
 #endregion

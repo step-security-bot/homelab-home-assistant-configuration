@@ -30,11 +30,19 @@
         {
             "customType": "regex",
             "fileMatch": [
-                "(^|/|\\.)custom_components\\.txt$",
-                "(^|/|\\.)wwww_components\\.txt$"
+                "(^|/|\\.)custom_components\\.txt$"
             ],
             "matchStrings": [
                 "# renovate: datasource=(?<datasource>[a-z-]+) packageName=(?<packageName>.+)\\s+https.+@(?<currentValue>.+)"
+            ]
+        },
+        {
+            "customType": "regex",
+            "fileMatch": [
+                "(^|/|\\.)www_components\\.txt$"
+            ],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>[a-z-]+) packageName=(?<packageName>.+)\\s+https.+@(?<currentValue>.+)@.+@.+"
             ]
         }
     ]
