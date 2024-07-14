@@ -1,4 +1,4 @@
-# renovate: datasource=github-releases packageName=ollo69/ha-smartthinq-sensors versioning=semver
+# renovate: datasource=github-releases packageName=ollo69/ha-smartthinq-sensors versioning=npm
 https://github.com/ollo69/ha-smartthinq-sensors.git@v0.39.2
 # renovate: datasource=github-releases packageName=sockless-coding/panasonic_cc versioning=semver
 https://github.com/sockless-coding/panasonic_cc.git@v1.0.58
