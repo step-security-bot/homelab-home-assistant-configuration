@@ -34,7 +34,7 @@
                 "(^|/|\\.)wwww_components\\.txt$"
             ],
             "matchStrings": [
-                "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?.*@(?<currentValue>.+?)\\s"
+                "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?.+\\@(?<currentValue>.+?)\\s"
             ]
         }
     ]
