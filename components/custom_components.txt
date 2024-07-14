@@ -1,5 +1,6 @@
 https://github.com/ollo69/ha-smartthinq-sensors.git@v0.39.2
 https://github.com/sockless-coding/panasonic_cc.git@v1.0.58
 https://github.com/slashback100/presence_simulation.git@v4.8
+https://github.com/acon96/home-llm.git@v0.3.3
 https://github.com/zachowj/hass-node-red.git@v4.0.1
 https://github.com/muhlba91/onyx-homeassistant-integration.git@v10.0.0
