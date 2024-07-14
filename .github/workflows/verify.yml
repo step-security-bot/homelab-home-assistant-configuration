@@ -2,31 +2,36 @@
 name: Verify
 
 on:
-  push:
+  pull_request:
+  schedule:
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 jobs:
-  conform:
+  homeassistant:
     runs-on: ubuntu-latest
-    name: Conform
+    name: Verify Home Assistant Configuration
+    strategy:
+      max-parallel: 4
+      matrix:
+        home-assistant-version:
+          - stable
+          - beta
+          - dev
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: siderolabs/conform@v0.1.0-alpha.27
+      - name: Prepare data
+        run: |
+          ./lifecycle/prepare.sh configuration
+
+      - name: Check Home Assistant Configuration
+        uses: frenck/action-home-assistant@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-  yaml:
-    runs-on: ubuntu-latest
-    name: Lint YAML
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - run: |
-          yamllint .
+          path: configuration
+          secrets: .ci/secrets.yaml
+          env_file: .ci/env
+          version: "${{ matrix.home-assistant-version }}"
