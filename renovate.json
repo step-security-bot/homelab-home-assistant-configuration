@@ -12,7 +12,8 @@
     ],
     "enabledManagers": [
         "github-actions",
-        "pip_requirements"
+        "pip_requirements",
+        "regex"
     ],
     "github-actions": {
         "fileMatch": [
@@ -24,5 +25,17 @@
         "fileMatch": [
             "(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)$"
         ]
-    }
+    },
+    "customManagers": [
+        {
+            "customType": "regex",
+            "fileMatch": [
+                "(^|/|\\.)custom_components\\.txt$",
+                "(^|/|\\.)wwww_components\\.txt$"
+            ],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?.*@(?<currentValue>.+?)\\s"
+            ]
+        }
+    ]
 }

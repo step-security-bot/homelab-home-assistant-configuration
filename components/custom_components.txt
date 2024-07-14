@@ -1,3 +1,4 @@
+# renovate: datasource=github-releases depName=ha-smartthinq-sensors packageName=ollo69/ha-smartthinq-sensors versioning=semver
 https://github.com/ollo69/ha-smartthinq-sensors.git@v0.39.2
 https://github.com/sockless-coding/panasonic_cc.git@v1.0.58
 https://github.com/slashback100/presence_simulation.git@v4.8
