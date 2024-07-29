@@ -1,7 +1,7 @@
 ---
 api_version: 2
 ssl: false
-host: telegraf.home-assistant-telegraf
+host: home-assistant-telegraf.home-assistant-telegraf
 port: 8086
 organization: home-data
 bucket: homeassistant
